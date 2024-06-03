@@ -1,4 +1,6 @@
+import 'package:chat_app/themes/theme_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class ChatBubbleWidget extends StatelessWidget {
   const ChatBubbleWidget(
@@ -9,6 +11,8 @@ class ChatBubbleWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool isDarkMode =
+        Provider.of<ThemeProvider>(context, listen: false).isDarkMode;
     return Container(
       margin: EdgeInsets.symmetric(
         vertical: 5,
